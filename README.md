@@ -95,7 +95,7 @@ It runs queries on a regular basis and displays the results in the panel.
 
 If the threshold is exceeded, a warning can also be displayed using a balloon tip.
 
-The settings are defined in a YAML file, and you can add definitions to `$ENV:LOCALAPPDATA\SSMSCustomExtension\Query`.
+The settings are defined in a YAML file, and you can add definitions to `$env:LOCALAPPDATA\SSMSCustomExtension\Query`.
 
 By default, the following YAML is included as a sample.
 ```
