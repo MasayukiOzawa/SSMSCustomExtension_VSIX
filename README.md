@@ -55,10 +55,9 @@ foreach ($file in $installFiles) {
 }
 ```
 
-Once the installation is complete, the extension will be deployed to `$env:LOCALAPPDATA\Microsoft\SSMS\22.0_xxxxxxxx\Extensions`.
+Once the installation is complete, SSMS deploys the installed extension under `$env:LOCALAPPDATA\Microsoft\SSMS\22.0_xxxxxxxx\Extensions`.
 
-The script above is deployed to the user profile, but if you have administrator privileges,
-you can also deploy it to all users by placing it in `C:\Program Files\Microsoft SQL Server Management Studio 22\Release\Common7\IDE\Extensions`.
+The script above installs the VSIX files. If you have administrator privileges, you can also make the extension available to all users by placing it in `C:\Program Files\Microsoft SQL Server Management Studio 22\Release\Common7\IDE\Extensions`.
 
 ## 3. Settings for displaying the menu
 This extension adds a dedicated menu.
