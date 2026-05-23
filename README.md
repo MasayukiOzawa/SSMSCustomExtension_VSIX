@@ -1,14 +1,7 @@
 # SSMSCustomExtension_VSIX
 This repository provides VSIX files for installing SSMS Custom Extensions.
 
-By installing this extension, you can use the following features in SSMS.
-
-1. Resource Quick Panel
-2. Warning Detection
-3. Transaction Isolation Level Auto / Manual Insert
-4. Connection Information Overlay
-5. Add a statement to verify query information
-6. Query Chart Panel
+By installing this extension, you can use several features in SSMS. For the canonical feature list, see [Features available in this extension](#features-available-in-this-extension).
 
 ![Overview](./img/00.png)
 
