@@ -16,7 +16,7 @@ By installing this extension, you can use the following features in SSMS.
 # Installation Instructions
 ## Prerequisites
 This extension has been tested and confirmed to work with the following versions.
-- Windows 11　or Windows Server 2025
+- Windows 11 or Windows Server 2025
 - SQL Server Management Studio 22.x
 
 ## 1. Download VSIX Files
