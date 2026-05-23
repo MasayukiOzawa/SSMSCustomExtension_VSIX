@@ -71,8 +71,8 @@ This extension includes the following features.
 2. Warning Detection
 3. Transaction Isolation Level Auto / Manual Insert
 4. Connection Information Overlay
-4. Add a statement to verify query information
-5. Query Chart Panel
+5. Add a statement to verify query information
+6. Query Chart Panel
 
 
 ## Resource Quick Panel
