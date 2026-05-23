@@ -63,7 +63,7 @@ To display the extension menu, follow these steps.
 When SSMS restarts, SSMS Extensions will appear as a separate menu.
 ![SSMS Extensions Menu](./img/03.png)
 
-
+---
 # Features available in this extension
 This extension includes the following features.
 
