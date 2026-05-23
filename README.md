@@ -16,8 +16,8 @@ Run the following script.
 $vsixPath = "C:\vsix"
 
 $VsixInstaller = "C:\Program Files\Microsoft SQL Server Management Studio 22\Release\Common7\IDE\VSIXInstaller.exe"
-$Path = "C:\Program Files\Microsoft SQL Server Management Studio 22\Release\Common7\IDE\Ssms.exe"
-$ssmsVersion = (Get-Item -LiteralPath $Path).VersionInfo.ProductVersion
+$ssmsExePath = "C:\Program Files\Microsoft SQL Server Management Studio 22\Release\Common7\IDE\Ssms.exe"
+$ssmsVersion = (Get-Item -LiteralPath $ssmsExePath).VersionInfo.ProductVersion
 
 $installFiles = @(  "CommonOptionsWindow.vsix", 
                     "IsolationLevelAutoInsert.vsix", 
