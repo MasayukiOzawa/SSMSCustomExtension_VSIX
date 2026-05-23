@@ -1,7 +1,7 @@
 # SSMSCustomExtension_VSIX
 This repository provides VSIX files for installing SSMS Custom Extensions.
 
-## Installation Instructions
+# Installation Instructions
 ## Prerequisites
 - Windows 11
 - SQL Server Management Studio 22.x
