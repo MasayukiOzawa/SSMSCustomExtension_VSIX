@@ -6,17 +6,22 @@ By installing this extension, you can use several features in SSMS. For the cano
 ![Overview](./img/00.png)
 
 
-# Installation Instructions
-## Prerequisites
+## Installation Instructions
+### Prerequisites
 This extension has been tested and confirmed to work with the following versions.
 - Windows 11 or Windows Server 2025
 - SQL Server Management Studio 22.x
 
-## 1. Download VSIX Files
+The following extension connects to SQL Server and runs queries periodically. It assumes that the user connecting via SSMS has been granted permissions equivalent to the `#MS_ServerPerformanceStateReader##` server role.  
+- Resource Quick Panel
+- Query Chart Panel
+
+### Install Steps
+#### 1. Download VSIX Files
 Download the vsix.zip file from the “Releases” section and extract it to the device where you want to install it.
 This procedure assumes that the files have been extracted to `C:\vsix`.
 
-## 2. Running the installation script
+#### 2. Running the installation script
 Run the following script.
 ```
 $vsixPath = "C:\vsix"
@@ -59,7 +64,7 @@ Once the installation is complete, SSMS deploys the installed extension under `$
 
 The script above installs the VSIX files. If you have administrator privileges, you can also make the extension available to all users by placing it in `C:\Program Files\Microsoft SQL Server Management Studio 22\Release\Common7\IDE\Extensions`.
 
-## 3. Settings for displaying the menu
+#### 3. Settings for displaying the menu
 This extension adds a dedicated menu.
 After installation, follow these steps to add the menu.
 
@@ -75,7 +80,12 @@ When SSMS restarts, SSMS Extensions will appear as a separate menu.
 You can change the settings for this extension from this menu.
 ![SSMS Extensions Menu](./img/11.png)
 
-# Features available in this extension
+### Option Menu
+You can change the settings for this extension under “Options.”
+![Option Menu](./img/11.png)
+
+
+## Features available in this extension
 This extension includes the following features.
 
 1. Resource Quick Panel
@@ -85,7 +95,7 @@ This extension includes the following features.
 5. Add a statement to verify query information
 6. Query Chart Panel
 
-## Resource Quick Panel
+### Resource Quick Panel
 
 You can display the window by clicking “Resource Quick Panel” in the menu.  
 ![Resource Quick Panel](./img/04.png)
@@ -169,24 +179,51 @@ metrics:
       message: "Page Life Expectancy on server '{serverName}' has fallen below  {operator} {threshold} (current value: {value}). This may indicate memory pressure."
 ```
 
-## Warning Detection
+### Warning Detection
 If a query in the query editor contains `DROP TABLE` or `TRUNCATE TABLE`, a warning will be displayed.
 
 ![Warning Detection](./img/06.png)
 
-## Transaction Isolation Level Auto / Manual Insert
+### Transaction Isolation Level Auto / Manual Insert
 Inserts the specified transaction isolation level into the first line of the currently displayed query editor.
 
 ![Transaction Isolation Level Auto / Manual Insert](./img/07.png)
 
-## Connection Information Overlay
+By configuring Auto Insert, the specified transaction isolation level will be automatically inserted when you open a new query editor.
+
+### Connection Information Overlay
 Displays information about the SQL Server to connect to in the Query Editor.
 ![Connection Information Overlay](./img/08.png)
 
-## Add a statement to verify query information
-Insert the DBCC statements “SET STATISTICS TIME, IO ON” into the query editor.
+The following settings are the default, and you can use the placeholders specified in the default settings.
+```
+Connection Info
+- SPID: {Spid}
+- AppName: {AppName}
+- Server: {Server}
+- Database: {Database}
+- UserName: {UserName}
+- ServerVersion: {ServerVersion}
+- ProductVersion: {ProductVersion}
+- ApplicationIntent: {ApplicationIntent}
+
+- ServerShort: {ServerShort}
+- DisplayName: {DisplayName}
+- CurrentDatabase: {CurrentDatabase}
+- Authentication: {Authentication}
+- TrustServerCertificate: {TrustServerCertificate}
+- WorkstationId: {WorkstationId}
+```
+You can also set color rules for each server you connect to.
+
+### Add a statement to verify query information
+Insert the `SET` statements `SET STATISTICS TIME ON` and `SET STATISTICS IO ON` into the query editor.
 ![Add a statement to verify query information](./img/09.png)
 
-## Query Chart Panel
+The `DBCC TRACEON` command enables flags that allow you to monitor the internal operations during query execution.
+
+### Query Chart Panel
 Run queries periodically and display a line graph.  
 ![Query Chart Panel](./img/10.png)
+
+It periodically executes a specified query, retrieves a single value, and displays it as a line graph.
