@@ -217,7 +217,7 @@ Connection Info
 You can also set color rules for each server you connect to.
 
 ### Add a statement to verify query information
-Insert the DBCC statements “SET STATISTICS TIME, IO ON” into the query editor.
+Insert the `SET` statements `SET STATISTICS TIME ON` and `SET STATISTICS IO ON` into the query editor.
 ![Add a statement to verify query information](./img/09.png)
 
 The DBCC TRACEON command enables flags that allow you to monitor the internal operations during query execution.
